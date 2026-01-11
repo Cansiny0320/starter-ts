@@ -1,0 +1,7 @@
+# Normalize line endings in repository
+# Prefer LF in repo; keep user working-tree defaults configurable
+* text=auto eol=lf
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
