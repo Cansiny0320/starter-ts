@@ -8,6 +8,8 @@
 
 _description_
 
+> Note: Replace pkg-placeholder, _description_ globally to use this template.
+
 ## Note for Developers
 
 This starter recommands using [npm Trusted Publisher](https://github.com/e18e/ecosystem-issues/issues/201), where the release is done on CI to ensure the security of the packages.
