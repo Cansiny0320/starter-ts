@@ -1,68 +1,62 @@
 {
-  "name": "pkg-name",
+  "name": "pkg-placeholder",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@8.6.10",
-  "description": "",
+  "packageManager": "pnpm@10.25.0",
+  "description": "_description_",
   "author": "Cansiny0320 <cansiny1220@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/Cansiny0320/pkg-name#readme",
+  "funding": "https://github.com/sponsors/Cansiny0320",
+  "homepage": "https://github.com/Cansiny0320/pkg-placeholder#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cansiny0320/pkg-name.git"
+    "url": "git+https://github.com/Cansiny0320/pkg-placeholder.git"
   },
-  "bugs": "https://github.com/Cansiny0320/pkg-name/issues",
+  "bugs": "https://github.com/Cansiny0320/pkg-placeholder/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
+  "types": "./dist/index.d.mts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
-    "lint": "eslint .",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "lint": "eslint",
     "prepublishOnly": "nr build",
-    "release": "bumpp && npm publish",
-    "start": "esno src/index.ts",
+    "release": "bumpp",
+    "start": "tsx src/index.ts",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc",
+    "prepare": "simple-git-hooks"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.39.8",
-    "@antfu/ni": "^0.21.5",
-    "@types/node": "^20.4.5",
-    "bumpp": "^9.1.1",
-    "eslint": "^8.45.0",
-    "esno": "^0.17.0",
-    "lint-staged": "^13.2.3",
-    "pnpm": "^8.6.10",
-    "rimraf": "^5.0.1",
-    "simple-git-hooks": "^2.9.0",
-    "typescript": "^5.1.6",
-    "unbuild": "^1.2.1",
-    "vite": "^4.4.7",
-    "vitest": "^0.33.0"
+    "@antfu/eslint-config": "catalog:cli",
+    "@antfu/ni": "catalog:cli",
+    "@antfu/utils": "catalog:inlined",
+    "@types/node": "catalog:types",
+    "bumpp": "catalog:cli",
+    "eslint": "catalog:cli",
+    "lint-staged": "catalog:cli",
+    "publint": "catalog:cli",
+    "simple-git-hooks": "catalog:cli",
+    "tinyexec": "catalog:testing",
+    "tsdown": "catalog:cli",
+    "tsx": "catalog:cli",
+    "typescript": "catalog:cli",
+    "vite": "catalog:cli",
+    "vitest": "catalog:testing",
+    "vitest-package-exports": "catalog:testing",
+    "yaml": "catalog:testing"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
+    "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && npx lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
