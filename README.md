@@ -51,7 +51,6 @@ This template uses pnpm `catalog:` versions (see `pnpm-workspace.yaml`). If you 
 
 ## Sponsors
 
-
 If you find this project helpful, consider supporting it via GitHub Sponsors:
 
 https://github.com/sponsors/Cansiny0320
