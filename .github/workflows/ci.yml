@@ -17,8 +17,8 @@ on:
       - README.md
       - README.zh-CN.md
 
-
 jobs:
+
   lint:
     runs-on: ubuntu-latest
     steps:

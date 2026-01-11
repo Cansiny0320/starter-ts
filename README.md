@@ -49,8 +49,8 @@ This starter recommends using [npm Trusted Publisher](https://github.com/e18e/ec
 
 This template uses pnpm `catalog:` versions (see `pnpm-workspace.yaml`). If you don't want that, replace `catalog:*` entries in `package.json` with explicit semver versions.
 
-
 ## Sponsors
+
 
 If you find this project helpful, consider supporting it via GitHub Sponsors:
 
